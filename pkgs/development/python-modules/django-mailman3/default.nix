@@ -30,6 +30,8 @@ buildPythonPackage rec {
     hash = "sha256-+ZFrJpy5xdW6Yde/XEvxoAN8+TSQdiI0PfjZ7bHG0Rs=";
   };
 
+  pythonRelaxDeps = [ "django-allauth" ];
+
   build-system = [ pdm-backend ];
 
   dependencies = [
