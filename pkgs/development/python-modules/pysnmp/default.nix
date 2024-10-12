@@ -18,14 +18,14 @@
 
 buildPythonPackage rec {
   pname = "pysnmp";
-  version = "7.1.5";
+  version = "6.2.6";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "lextudio";
     repo = "pysnmp";
     rev = "refs/tags/v${version}";
-    hash = "sha256-6KrJfYorC0NDIeoYbtaf5NK+v1YaCdckB1Jjm8BKPdQ=";
+    hash = "sha256-+FfXvsfn8XzliaGUKZlzqbozoo6vDxUkgC87JOoVasY=";
   };
 
   pythonRemoveDeps = [ "pytest-cov" ];
@@ -54,15 +54,7 @@ buildPythonPackage rec {
     "test_v1_get"
     "test_v1_next"
     "test_v1_set"
-    #  pysnmp.error.PySnmpError: Bad IPv4/UDP transport address demo.pysnmp.com@161: [Errno -3] Temporary failure in name resolution
     "test_v2c_bulk"
-    "test_v2c_get_table_bulk"
-    "test_v2c_get_table_bulk_0_7"
-    "test_v2c_get_table_bulk_0_8"
-    "test_v2c_get_table_bulk_0_31"
-    "test_v2c_get_table_bulk_0_60"
-    "test_v2c_get_table_bulk_0_5_subtree"
-    "test_v2c_get_table_bulk_0_6_subtree"
     # pysnmp.smi.error.MibNotFoundError
     "test_send_v3_trap_notification"
     "test_addAsn1MibSource"
